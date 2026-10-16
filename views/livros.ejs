@@ -1,0 +1,28 @@
+<h1>Catálogo de livros</h1>
+
+<section class="cartao">
+    <% if (livros.length === 0) { %>
+        <p>Nenhum livro cadastrado.</p>
+    <% } else { %>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Título</th>
+                    <th>Autor</th>
+                    <th>Preço</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% livros.forEach(livro => { %>
+                    <tr>
+                        <td><%= livro.id %></td>
+                        <td><%= livro.titulo %></td>
+                        <td><%= livro.autor %></td>
+                        <td>R$ <%= livro.preco.toFixed(2).replace('.', ',') %></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    <% } %>
+</section>
