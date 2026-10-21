@@ -1,18 +1,19 @@
 {
   "name": "api-2026-emanuelly-marilia-yasmin",
   "version": "1.0.0",
+  "type": "module",
   "description": "",
   "main": "index.js",
- "scripts": {
-  "start": "node app.js",
-  "dev": "nodemon app.js"
+"scripts": {
+  "start": "node --experimental-sqlite app.js",
+  "populate": "node --experimental-sqlite scripts/populate.js"
 },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "better-sqlite3": "^13.0.3",
-    "ejs": "^7.0.1",
+    "ejs": "^7.0.2",
     "express": "^5.3.0",
     "express-ejs-layouts": "^2.5.1"
   },

@@ -1,0 +1,18 @@
+<header class="topbar">
+  <a href="/" class="logo">Páginas&amp;Co</a>
+  <form class="search" action="/livros" method="GET">
+    <input type="text" name="q" placeholder="Buscar livros..." />
+    <button type="submit">🔍</button>
+  </form>
+  <a href="/login" class="login">🛒 Entrar</a>
+</header>
+<nav class="nav">
+  <a href="/livros">Todos</a>
+  <% /* categorias fixas no menu */ %>
+  <a href="/livros?cat=1">Romance</a>
+  <a href="/livros?cat=2">Fantasia</a>
+  <a href="/livros?cat=3">Tecnologia</a>
+  <a href="/livros?cat=5">Ficção Científica</a>
+  <a href="/livros?cat=6">Didáticos</a>
+  <a href="/livros" class="btn-order">COMPRAR</a>
+</nav>

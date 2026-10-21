@@ -1,9 +1,5 @@
-function logger(req, res, next) {
-    console.log(
-        `${new Date().toLocaleString('pt-BR')} - ${req.method} ${req.url}`
-    );
-
-    next();
+export default function logger(req, res, next) {
+  const hora = new Date().toLocaleTimeString("pt-BR");
+  console.log(`[${hora}] ${req.method} ${req.url}`);
+  next();
 }
-
-module.exports = logger;

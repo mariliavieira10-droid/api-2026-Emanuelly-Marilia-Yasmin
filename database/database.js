@@ -1,17 +1,12 @@
+import { DatabaseSync } from "node:sqlite";
+import fs from "node:fs";
 
-const Database = require('better-sqlite3');
-const path = require('path');
-const fs = require('fs');
+fs.mkdirSync("databases", { recursive: true });
 
-const pastaBanco = path.join(__dirname, '..', 'databases');
+const createDatabase = (dbName = "livraria.db") => {
+  const db = new DatabaseSync(`databases/${dbName}`);
+  db.exec("PRAGMA foreign_keys = ON");
+  return db;
+};
 
-if (!fs.existsSync(pastaBanco)) {
-    fs.mkdirSync(pastaBanco, { recursive: true });
-}
-
-const caminhoBanco = path.join(pastaBanco, 'livraria.db');
-const db = new Database(caminhoBanco);
-
-db.pragma('foreign_keys = ON');
-
-module.exports = db;
+export { createDatabase };

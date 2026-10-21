@@ -1,5 +1,66 @@
+<!-- HERO -->
 <section class="hero">
-    <h1>Livraria</h1>
-    <p>Bem-vindo ao sistema de gerenciamento de livros.</p>
-    <a class="botao" href="/livros">Ver catálogo</a>
+  <div class="hero-img">📚</div>
+  <div class="hero-text">
+    <h1>HISTÓRIAS<br />QUE TRANSFORMAM!</h1>
+    <p>Encontre sua próxima grande leitura</p>
+    <% if (promocao) { %>
+      <span class="badge">
+        <%= promocao.nome_promocao %> · ECONOMIZE
+        <%= promocao.desconto_percentual %>%
+      </span>
+    <% } %>
+  </div>
+</section>
+
+<!-- CATEGORIAS -->
+<section class="card-section">
+  <div class="menu-head">
+    <div>
+      <h2>Categorias</h2>
+      <p>O que você quer ler hoje?</p>
+    </div>
+    <div class="cats">
+      <% categorias.forEach(c => { %>
+        <a class="cat" href="/livros?cat=<%= c.id_categoria %>">
+          <span>📖</span><%= c.nome_categoria %>
+        </a>
+      <% }); %>
+    </div>
+  </div>
+
+  <!-- MAIS VENDIDOS -->
+  <h3 class="sub">Mais vendidos</h3>
+  <div class="grid">
+    <% maisVendidos.forEach(l => { %>
+      <a class="book" href="/livros/<%= l.id_livro %>">
+        <div class="cover"><%= l.titulo %></div>
+        <h4><%= l.titulo %></h4>
+        <small><%= l.autores || 'Autor desconhecido' %></small>
+        <p class="price">R$ <%= l.preco.toFixed(2).replace('.', ',') %></p>
+        <small><%= l.nome_categoria %> · <%= l.vendidos %> vendidos</small>
+      </a>
+    <% }); %>
+  </div>
+  <a href="/livros" class="btn-all">VER TODOS</a>
+
+  <!-- NOSSA PROMESSA -->
+  <h2 class="promise">Nossa promessa</h2>
+  <p>Sem mágica: só leitura de qualidade.</p>
+  <div class="promise-grid">
+    <div class="stats">
+      <div><strong>🚚</strong>Entrega rápida</div>
+      <div><strong><%= stats.livros %></strong>Livros</div>
+      <div><strong><%= stats.clientes %></strong>Leitores</div>
+      <div><strong><%= stats.vendas %></strong>Vendas</div>
+    </div>
+    <div class="ticket">
+      <div class="ticket-icon">🎟️</div>
+      <div>
+        <h4>O CUPOM MÁGICO</h4>
+        <p>Cadastre-se e ganhe ofertas especiais.</p>
+        <a href="/cadastro" class="btn-all">LIBERAR</a>
+      </div>
+    </div>
+  </div>
 </section>
