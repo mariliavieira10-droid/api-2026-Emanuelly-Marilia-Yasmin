@@ -1,14 +1,14 @@
 :root {
-  --wine: #a12b2f;
-  --wine-dark: #7d1f23;
-  --rose: #fbe9e7;
+  --wine:#2F1728;
+  --wine-dark: #412438;
+  --rose: #f3eeea;
   --cream: #fff7f5;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
   font-family: "Segoe UI", Arial, sans-serif;
-  background: #f6e9d9;
-  color: #4a1416;
+  background: #f3eeea;
+  color: #2F1728;
 }
 a { text-decoration: none; color: inherit; }
 
@@ -38,7 +38,7 @@ a { text-decoration: none; color: inherit; }
 .hero {
   display: flex; align-items: center; justify-content: space-between;
   gap: 20px; padding: 40px 28px 90px; color: #fff;
-  background: linear-gradient(135deg, #d9626a, var(--wine));
+  background: linear-gradient(135deg, #cbb089, var(--wine));
 }
 .hero-img {
   width: 200px; height: 200px; border-radius: 50%; border: 8px solid #fff;
@@ -70,7 +70,7 @@ h2 { color: var(--wine); font-size: 1.8rem; }
 .book { background: #fff; border-radius: 18px; padding: 14px; box-shadow: 0 4px 12px rgba(0,0,0,.08); display: block; }
 .cover {
   height: 150px; border-radius: 10px; margin-bottom: 10px;
-  background: linear-gradient(160deg, var(--wine), #3d0c0e);
+  background: linear-gradient(160deg, var(--wine), #2F1728);
   color: #fff; display: grid; place-items: center; text-align: center;
   padding: 10px; font-weight: 700; font-size: .9rem;
 }
