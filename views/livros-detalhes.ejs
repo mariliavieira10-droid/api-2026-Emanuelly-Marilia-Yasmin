@@ -1,0 +1,15 @@
+<section class="list-page">
+  <a href="/livros">← Voltar</a>
+  <div class="detail">
+    <div class="cover big"><%= livro.titulo %></div>
+    <div>
+      <h2><%= livro.titulo %></h2>
+      <p><%= livro.autores || 'Autor desconhecido' %></p>
+      <p class="price big-price">R$ <%= livro.preco.toFixed(2).replace('.', ',') %></p>
+      <p>Categoria: <%= livro.nome_categoria %></p>
+      <p>Editora: <%= livro.nome_fornecedor %></p>
+      <p>ISBN: <%= livro.isbn %></p>
+      <p>Em estoque: <%= livro.estoque %></p>
+    </div>
+  </div>
+</section>

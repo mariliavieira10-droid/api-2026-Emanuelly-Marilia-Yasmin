@@ -1,0 +1,30 @@
+<section class="list-page">
+  <h2>Livros</h2>
+  <p>
+    <% if (busca) { %>Resultados para "<%= busca %>" · <% } %>
+    <%= livros.length %> livro(s)
+  </p>
+
+  <div class="cats" style="margin:12px 0">
+    <a class="cat" href="/livros">Todos</a>
+    <% categorias.forEach(c => { %>
+      <a class="cat" href="/livros?cat=<%= c.id_categoria %>"><%= c.nome_categoria %></a>
+    <% }); %>
+  </div>
+
+  <div class="grid">
+    <% livros.forEach(l => { %>
+      <a class="book" href="/livros/<%= l.id_livro %>">
+        <div class="cover"><%= l.titulo %></div>
+        <h4><%= l.titulo %></h4>
+        <small><%= l.autores || 'Autor desconhecido' %></small>
+        <p class="price">R$ <%= l.preco.toFixed(2).replace('.', ',') %></p>
+        <small><%= l.nome_categoria %></small>
+      </a>
+    <% }); %>
+  </div>
+
+  <% if (livros.length === 0) { %>
+    <p>Nenhum livro encontrado.</p>
+  <% } %>
+</section>
